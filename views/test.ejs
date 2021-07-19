@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %>
+
+    <div class="container">
+    <form action="/quiz<%=index%>" method="POST" class="validated-form" novalidate>
+        
+        <% for(let i = 0; i < total; i++, k++) { %>
+            <div class="card my-3 col-8 offset-2">
+                <div class="card-header">Question <%=i+1%></div>
+                <div class="card-body">
+                  <h5 class="card-text">
+                    <%=quiz[k].question%>
+                  </h5>
+                  <div class="form-check">
+                      <div class="row rounded">
+                          <div class="col-md-6 form-check">
+                            <input class="form-check-input" type="radio" name="selected[<%=i%>]" id="#op1<%=i%>" value="<%=quiz[k].option1%>" required>
+                            <label class="form-check-label" for="#op1<%=i%>"><%=quiz[k].option1%></label>
+                          </div>
+                
+                          <div class="col-md-6 form-check">
+                            <input class="form-check-input" type="radio" name="selected[<%=i%>]" id="#op2<%=i%>" value="<%=quiz[k].option2%>">
+                            <label class="form-check-label" for="#op2<%=i%>"><%=quiz[k].option2%></label>
+                          </div>
+                      
+                          <div class="col-md-6 form-check">
+                            <input class="form-check-input" type="radio" name="selected[<%=i%>]" id="#op3<%=i%>" value="<%=quiz[k].option3%>">
+                            <label class="form-check-label" for="#op3<%=i%>"><%=quiz[k].option3%></label>
+                          </div>
+                      
+                          <div class="col-md-6 form-check">
+                            <input class="form-check-input" type="radio" name="selected[<%=i%>]" id="#op4<%=i%>" value="<%=quiz[k].option4%>">
+                            <label class="form-check-label" for="#op4<%=i%>"><%=quiz[k].option4%></label>
+                          </div>
+                      </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+        <% } %>
+        <!-- <button>Submit</button> -->
+        <button class="btn btn-lg btn-info my-3">Submit</button>
+    </form>
+    </div>

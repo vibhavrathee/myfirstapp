@@ -1,0 +1,71 @@
+<% layout('layouts/boilerplate') %>
+<div class="bg-secondary">
+    <h1 class="display-1 text-center text-light">Quiz Game</h1>
+    <div class="container">
+    <div class="container-fluid row">
+        <div class="col-lg-6 px-3 py-3">
+            <div class="card h-100 bg-success">
+                <img src="https://media.vogue.fr/photos/5d51422c5dc6c20009ca8833/4:3/w_2426,h_1820,c_limit/010_A7A08B18_317.jpg" class="img-fluid h-50" alt="...">
+                <div class="card-body text-light">
+                    <h5 class="card-title">F.R.I.E.N.D.S</h5>
+                    <p class="card-text">It's been 17 years since the last episode aired, but Friends still holds a special place in our hearts. Who can forget all those crazy cast moments, like when Ross and Rachel ran off and got married or the scene that will live in memes forever—when Monica walked in with the turkey on her head?But if you're looking to flex your Friends trivia knowledge, we've got the best quiz out there which will help you see if you're an expert on all things Central Perk, or just a Smelly Cat.</p>
+                </div>
+                <form action="/quiz1">
+                    <div class="mt-auto">
+                        <button href="#" class="btn btn-primary mx-3 my-3">Take Quiz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 px-3 py-3">
+            <div class="card h-100 bg-info">
+                <img src="https://www.wallpaperuse.com/wallp/42-423572_m.jpg" class="img-fluid h-50" alt="...">
+                <div class="card-body text-light">
+                    <h5 class="card-title">Harry Potter</h5>
+                    <p class="card-text">Expert Level Harry Potter Quiz! 
+                        Only a true Harry Potter fan will get a perfect score. Take the quiz and see how many you can answer correctly!
+                    </p>
+                </div>
+                <form action="/quiz2">
+                    <div class="mt-auto">
+                        <button href="#" class="btn btn-primary mx-3 my-3">Take Quiz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="col-lg-6 px-3 py-3">
+            <div class="card h-100 bg-danger">
+                <img src="https://deadline.com/wp-content/uploads/2018/05/brooklyn-nine-nine.jpg?crop=0px%2C0px%2C621px%2C348px&resize=681%2C383" class="img-fluid h-50" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Brooklyn nine-nine</h5>
+                    <p class="card-text">The streets of New York are safe under the watch of the 99th Precinct! The show includes a talented cast and interesting and comedic storylines that always keep fans coming back for more.
+                        The show has proved its popularity through ratings and awards as well as its millions of fans. So, do you think you have what it takes to prove you're the ultimate "Brooklyn Nine-Nine" fan? Take the quiz to test your knowledge!
+                    </p>
+                </div>
+                <form action="/quiz3">
+                    <div class="mt-auto">
+                        <button href="#" class="btn btn-primary mx-3 my-3">Take Quiz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 px-3 py-3">
+            <div class="card h-100 bg-warning">
+                <img src="https://images.zawya.com/images/cia/zXlarge/200816034810TVOV.JPG" class="img-fluid h-50" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cricket</h5>
+                    <p class="card-text">Test your friends, family or even colleagues’ knowledge of the cricket world with these ten cricket questions, the ideal way to see if they can tell their Warne from their Waugh, their Kumble from their Kallis. <br>
+                        Ready to go? Let’s dive into what we think around the top 10 cricket quiz questions!</p>
+                </div>
+                <form action="/quiz4">
+                    <div class="mt-auto">
+                        <button href="#" class="btn btn-primary mx-3 my-3">Take Quiz</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <%- include('./partials/addReview') %>
+</div>

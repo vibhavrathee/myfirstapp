@@ -1,0 +1,60 @@
+<% layout('layouts/boilerplate') %>
+    <div class="bg-info">
+    <% let score = 0 %>
+    <!-- , k = 5 5 -->
+    <% for(let i=0; i < total; i++, k++)  { %>
+        <div class="container">
+            <% let correct = 0 %> 
+        <% if(quiz[k].answer === selected[i]){ correct = 1, score++ } else { correct = 0 } %>
+            <div class="card my-3 col-8 offset-2 <%if(correct === 1){%> border-success <%} else {%> border-danger<%}%>">
+                <div class="card-header">
+                    <% if(correct===0) {%>
+                        <p class="card-text text-danger font-weight-bold">
+                            &#10008;
+                        </p>
+                    <% } else {%>
+                        <p class="card-text text-success font-weight-bold">
+                            <strong>&check;</strong>
+                        </p>
+                    <% } %>  
+                    Question <%=i+1%>
+                </div>
+                <div class="card-body  <%if(correct === 1){%> text-success <%} else {%> text-danger <%}%>">
+                  <h5 class="card-title"><%=quiz[k].question%></h5>
+                  <div class="form-check">
+                    <div class="row rounded">
+                        <div class="col-md-6 form-check">
+                          <input class="form-check-input" type="radio" name="selected[<%=i%>]" id="#op1<%=i%>" <% if(quiz[k].option1 === selected[i]) {%> checked <% } %> disabled>
+                          <label class="form-check-label"  for="#op1<%=i%>"><%=quiz[k].option1%></label>
+                        </div>
+              
+                        <div class="col-md-6 form-check">
+                          <input class="form-check-input"  type="radio" name="selected[<%=i%>]" id="#op2<%=i%>" <% if(quiz[k].option2 === selected[i]) {%> checked <% } %> disabled >
+                          <label class="form-check-label"  for="#op2<%=i%>"><%=quiz[k].option2%></label>
+                        </div>
+                    
+                        <div class="col-md-6 form-check">
+                          <input class="form-check-input"  type="radio" name="selected[<%=i%>]" id="#op3<%=i%>" <% if(quiz[k].option3 === selected[i]) {%> checked <% } %> disabled >
+                          <label class="form-check-label"  for="#op3<%=i%>"><%=quiz[k].option3%></label>
+                        </div>
+                    
+                        <div class="col-md-6 form-check">
+                          <input class="form-check-input"  type="radio" name="selected[<%=i%>]" id="#op4<%=i%>" <% if(quiz[k].option4 === selected[i]) {%> checked <% } %> disabled >
+                          <label class="form-check-label"  for="#op4<%=i%>"><%=quiz[i].option4%></label>
+                        </div>
+                    </div>
+                    <% if(correct===0) {%>
+                        <p class="card-text text-success font-weight-bold">
+                          <strong><%=quiz[k].answer%></strong>
+                         </p>
+                    <% } %>
+                </div> 
+                </div>
+            </div>
+        </div>
+        <% } %>   
+        <div class="d-flex justify-content-center">
+            <h5 class="fst-italic display-5">Your score is :</h5><span type="button" class="btn btn-primary "><h5 class="display-6 text-center fst-italic"><%=score%>/<%=total%></h5></span> 
+        </div>   
+        <%- include('./partials/addReview') %>
+    </div>
