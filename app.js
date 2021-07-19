@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const dbUrl = process.env.URL;
+const dbUrl = process.env.URL || 'mongodb://localhost:27017/myFirstDatabase'
 
 const userRoutes = require('./routes/user')
 const quizRoutes = require('./routes/quiz')
