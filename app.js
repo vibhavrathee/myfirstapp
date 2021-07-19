@@ -4,6 +4,12 @@ const path = require('path');
 const mongoose = require('mongoose')
 const ejsMate = require('ejs-mate');
 
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+const dbUrl = process.env.URL;
+
 const userRoutes = require('./routes/user')
 const quizRoutes = require('./routes/quiz')
 const reviewRoutes = require('./routes/review')
@@ -53,7 +59,7 @@ const Review = require('./models/review');
 const router = require('./routes/quiz');
 // const questions = require('./seeds/questions4');
 
-mongoose.connect('mongodb://localhost:27017/quiz-game', {
+mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
@@ -65,7 +71,7 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-const code = process.env.PORT || 3000
+const code = process.env.PORT || 3000;
 app.listen(code, () => {
     console.log('Serving on port 3000');
 })
