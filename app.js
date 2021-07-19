@@ -65,7 +65,8 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
-app.listen(3000, () => {
+const code = process.env.PORT || 3000
+app.listen(code, () => {
     console.log('Serving on port 3000');
 })
 
